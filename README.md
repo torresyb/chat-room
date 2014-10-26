@@ -3,7 +3,7 @@ chat-room
 
 node.js+socket.io+mongodb+mongoose+grunt
 
-一个在线客户，还在完善中。。。
+一个在线客服会话，还在完善中。。。
 
 1.localhost:3000/ 
 登录用户和客服进行会话。
