@@ -1,0 +1,26 @@
+extends ./layout
+
+block content
+	.container
+		.row
+			table.table.table-hover.table-bordered
+				thead
+					tr
+						th 名字
+						th 时间
+						th 等级
+						th 信息量
+						th 操作
+				tbody
+					each item in users
+						tr(class='item-#{item._id}')
+							td #{item.name}
+							td #{moment(item.meta.updateAt).format('YYYY-MM-DD')}
+							if(item.role==0)
+								td 普通会员
+							else
+								td 高级会员
+							td.count #{item.count}
+							td
+								a.mesLook(href="/user/#{item._id}") 查看
+	script(src="/js/chatCount.js",type="text/javascript")

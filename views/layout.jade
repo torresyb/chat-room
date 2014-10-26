@@ -1,0 +1,13 @@
+doctype html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"
+html
+	head
+		meta(charset="utf-8")
+		title= title
+		link(rel='stylesheet', href='/css/base.css')
+		link(rel='stylesheet', href='/css/bootstrap.css')
+		script(type='text/javascript', src='/js/jquery.js')
+		script(type='text/javascript', src='/js/bootstrap.js')
+		script(type='text/javascript', src='/js/socket.io.js')
+	body
+		include ./header
+		block content

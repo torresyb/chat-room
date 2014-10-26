@@ -1,0 +1,49 @@
+extends ./layout
+block content
+	link(rel='stylesheet', href='/css/message.css')
+	.container.clearfix
+		#left_panel
+			ul#left_panel_nav
+				li#msg_new: a.active(href="#",title="最近")
+				li#msg_friends: a(href="#",title="好友")
+			.left_panel_content
+				#list_waper(style="height:500px")
+					ul#lastChat.user_list
+						li#lastChat10000.active(uid="#{user_id}")
+							img(height="40",width="40",src="http://img.mukewang.com/user/533e8fae0001207905520552-40-40.jpg")
+							.info
+								h5 访客
+		//聊天内容
+		#chat_container
+			#chat_content(style="height: 430px")
+				ul#userchatUl.userchatUl(uid="#{user_id}")
+					if chats
+						each chat in chats.messages
+							if chat.name=="admin"
+								li.you
+									.chat_avata
+										a(href="/space/u/uid/10000",target="_blank")
+											img.img_border_one(height="40px",width="40px",src="http://img.mukewang.com/user/533e8fae0001207905520552-40-40.jpg")
+									.a_msg_info#172151
+										pre #{chat.name}: #{chat.message}
+										i.arrow_left_b
+									small.time #{moment(chat.createAt).format('YYYY-MM-DD')}
+							else
+								li.me
+									.chat_avata
+										a(href="/space/u/uid/10000",target="_blank")
+											img.img_border_one(height="40px",width="40px",src="http://img.mukewang.com/user/533e8fae0001207905520552-40-40.jpg")
+									.a_msg_info#172151
+										pre #{chat.name}: #{chat.message}
+										i.arrow_left_b
+									small.time #{moment(chat.createAt).format('YYYY-MM-DD')}
+			#chat_editor
+				form#upLoadForm(method="post",action="/message/upload?1413518720378")
+					.row
+						.col-md-8
+							input#textInput.chatInput(type="text")
+						.col-md-4
+							a.chatSend.btn.btn-large.btn-green(href="javascript:;") 发送
+	script(src="/js/chat.js",type="text/javascript")
+
+
