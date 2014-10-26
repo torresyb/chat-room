@@ -1,7 +1,7 @@
 chat-room
 =========
 
-node.js+socket.io+mongodb+mongoose
+node.js+socket.io+mongodb+mongoose+grunt
 
 一个在线客户，还在完善中。。。
 
